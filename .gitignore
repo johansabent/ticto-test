@@ -39,3 +39,19 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# AI and Debug Artifacts
+.agent/
+.claude/
+CLAUDE.md
+.clinerules
+.cursorrules
+.editorconfig
+.windsurfrules
+.playwright-mcp/
+*.png
+build_output.txt
+correction_plan.md
+lighthouse.json
+docs/
+scripts/
