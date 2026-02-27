@@ -36,8 +36,6 @@ export default function Home() {
 
         {/* Right Column (Sticky Form) */}
         <div className="w-full lg:w-[50%] flex flex-col order-2 lg:sticky lg:top-16 lg:h-fit relative z-20">
-          {/* Ticto Logo Desktop Header Place (handled in relative doc flow by having an invisible spacer if needed, but the layout in figma has form right under header line) */}
-          <div className="hidden lg:block h-[134px]"> {/* Spacer to push form down alignment with subtitle */}</div>
           <SignupForm />
         </div>
       </main>

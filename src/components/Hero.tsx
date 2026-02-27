@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function Hero() {
   return (
-    <section className="relative z-10 lg:sticky lg:top-0 lg:-ml-6 lg:-mt-10 lg:pt-10 lg:h-screen lg:overflow-y-auto w-full max-w-lg lg:max-w-none mx-auto mb-10 lg:mb-0 lg:pr-10 scrollbar-hide">
+    <section className="relative z-10 w-full max-w-lg lg:max-w-none mx-auto mb-10 lg:mb-0 lg:pr-10">
 
       {/* Header */}
       <header className="flex items-center gap-4 lg:gap-8 mb-[54px] lg:mb-20">
