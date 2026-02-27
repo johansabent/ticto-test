@@ -5,7 +5,7 @@ Permite cadastro de participantes para concorrer a um iPhone 16 Pro.
 
 ## 🚀 Deploy
 
-**Produção:** [https://ticto-ebulicao.vercel.app](https://ticto-ebulicao.vercel.app) *(Substitua pela URL real após o deploy)*
+**Produção:** [https://ticto-test.vercel.app](https://ticto-test.vercel.app) *(Em andamento)*
 
 ## 🛠️ Tech Stack
 
@@ -15,42 +15,42 @@ Permite cadastro de participantes para concorrer a um iPhone 16 Pro.
 | React | 19 | UI components |
 | TypeScript | 5 | Type safety |
 | Tailwind CSS | 4 | Design tokens, utility classes |
-| Supabase JS | 2 | Backend-as-a-Service (leads table) |
-| canvas-confetti | 1.9 | Wow effect on form submit |
+| Supabase JS | 2 | Backend-as-a-Service (tabela de leads) |
+| canvas-confetti | 1.9 | Efeito especial após formulário |
 | Vercel | — | Deploy e CDN |
 
 ## 📐 Arquitetura
 
 - `src/app/` — Next.js App Router (layout, page, globals.css)
-- `src/components/` — Server + Client components (Hero, Rules, SignupForm, Footer)
-- `src/lib/supabase.ts` — Supabase singleton client
-- `public/images/` — Figma assets (SVGs, PNGs)
+- `src/components/` — Componentes Client + Server (Hero, Rules, SignupForm, Footer)
+- `src/lib/supabase.ts` — Singleton de conexão ao banco
+- `public/images/` — Assets exportados do Figma
 
-## 🏃 Dev local
+## 🏃 Setup Local
 
 ```bash
-# 1. Clone e instale
-git clone https://github.com/YOUR_USERNAME/ticto-ebulicao.git
-cd ticto-ebulicao
+# 1. Clone e instale as dependências
+git clone https://github.com/johansabent/ticto-test.git
+cd ticto-test
 npm install
 
-# 2. Configure variáveis de ambiente
+# 2. Configure as variáveis de ambiente
 cp .env.local.example .env.local
-# Edite .env.local com suas credenciais Supabase
+# Adicione suas chaves do Supabase no arquivo .env.local
 
-# 3. Rode o servidor de desenvolvimento
+# 3. Inicie o servidor local
 npm run dev
 # Acesse http://localhost:3000
 ```
 
-## 🔑 Variáveis de Ambiente
+## 🔑 Variáveis de Ambiente Necessárias
 
-```
-NEXT_PUBLIC_SUPABASE_URL      — URL do projeto Supabase
-NEXT_PUBLIC_SUPABASE_ANON_KEY — Chave anon pública do Supabase
+```bash
+NEXT_PUBLIC_SUPABASE_URL      # URL do seu banco Supabase
+NEXT_PUBLIC_SUPABASE_ANON_KEY # Chave anon (pública)
 ```
 
-## 📊 Supabase — Tabela `leads`
+## 📊 Supabase — Schema da Tabela `leads`
 
 ```sql
 create table leads (
@@ -66,5 +66,5 @@ create table leads (
 
 ## 🎨 Design
 
-Pixel-perfect implementation of Figma design.
+Layout focado no Pixel-Perfect a partir do modelo base.
 Figma file: [Teste Dev (cópia)](https://www.figma.com/design/ItETjflubGwYdIXyKkht0E/)
