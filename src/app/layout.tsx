@@ -1,5 +1,5 @@
 import { Inter, Space_Grotesk, Plus_Jakarta_Sans } from "next/font/google";
-import type { Viewport } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 const inter = Inter({
@@ -27,9 +27,23 @@ export const viewport: Viewport = {
   viewportFit: "cover",
 };
 
-export const metadata = {
-  title: "Ticto × Ebulição - Transforme seu negócio numa máquina de vendas",
-  description: "A ebulição instantânea para produtos digitais e físicos começa com a maior e mais poderosa plataforma do Brasil",
+export const metadata: Metadata = {
+  title: "Ticto × Ebulição — Transforme seu negócio numa máquina de vendas",
+  description: "Crie sua conta na Ticto, participe do evento Ebulição por Rafa Prado e concorra a um iPhone 16 Pro. A maior plataforma de vendas do Brasil.",
+  openGraph: {
+    title: "Ticto × Ebulição — Concorra a um iPhone 16 Pro",
+    description: "Crie sua conta na Ticto e concorra a um iPhone 16 Pro no evento Ebulição.",
+    type: "website",
+    locale: "pt_BR",
+    images: [{ url: "/og-image.svg", width: 1200, height: 630, alt: "Ticto × Ebulição" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ticto × Ebulição — Concorra a um iPhone 16 Pro",
+    description: "Crie sua conta na Ticto e concorra a um iPhone 16 Pro no evento Ebulição.",
+    images: ["/og-image.svg"],
+  },
+  robots: "index, follow",
 };
 
 export default function RootLayout({
