@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Ticto × Ebulição — Landing Page
 
-## Getting Started
+Landing page promocional para o evento Ebulição por Rafa Prado × Ticto.
+Permite cadastro de participantes para concorrer a um iPhone 16 Pro.
 
-First, run the development server:
+## 🚀 Deploy
+
+**Produção:** [https://ticto-ebulicao.vercel.app](https://ticto-ebulicao.vercel.app) *(Substitua pela URL real após o deploy)*
+
+## 🛠️ Tech Stack
+
+| Tecnologia | Versão | Propósito |
+|-----------|--------|-----------|
+| Next.js | 16.1.6 | App Router, SSR/SSG |
+| React | 19 | UI components |
+| TypeScript | 5 | Type safety |
+| Tailwind CSS | 4 | Design tokens, utility classes |
+| Supabase JS | 2 | Backend-as-a-Service (leads table) |
+| canvas-confetti | 1.9 | Wow effect on form submit |
+| Vercel | — | Deploy e CDN |
+
+## 📐 Arquitetura
+
+- `src/app/` — Next.js App Router (layout, page, globals.css)
+- `src/components/` — Server + Client components (Hero, Rules, SignupForm, Footer)
+- `src/lib/supabase.ts` — Supabase singleton client
+- `public/images/` — Figma assets (SVGs, PNGs)
+
+## 🏃 Dev local
 
 ```bash
+# 1. Clone e instale
+git clone https://github.com/YOUR_USERNAME/ticto-ebulicao.git
+cd ticto-ebulicao
+npm install
+
+# 2. Configure variáveis de ambiente
+cp .env.local.example .env.local
+# Edite .env.local com suas credenciais Supabase
+
+# 3. Rode o servidor de desenvolvimento
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Acesse http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🔑 Variáveis de Ambiente
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+NEXT_PUBLIC_SUPABASE_URL      — URL do projeto Supabase
+NEXT_PUBLIC_SUPABASE_ANON_KEY — Chave anon pública do Supabase
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📊 Supabase — Tabela `leads`
 
-## Learn More
+```sql
+create table leads (
+  id         uuid default gen_random_uuid() primary key,
+  created_at timestamptz default now(),
+  name       text not null,
+  ddd        text,
+  email      text not null,
+  celular    text,
+  sells_online text
+);
+```
 
-To learn more about Next.js, take a look at the following resources:
+## 🎨 Design
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Pixel-perfect implementation of Figma design.
+Figma file: [Teste Dev (cópia)](https://www.figma.com/design/ItETjflubGwYdIXyKkht0E/)
