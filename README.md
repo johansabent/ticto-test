@@ -67,4 +67,3 @@ create table leads (
 ## 🎨 Design
 
 Layout focado no Pixel-Perfect a partir do modelo base.
-Figma file: [Teste Dev (cópia)](https://www.figma.com/design/ItETjflubGwYdIXyKkht0E/)
