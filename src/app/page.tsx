@@ -1,8 +1,10 @@
 import Image from "next/image";
+import dynamic from "next/dynamic";
 import Hero from "@/components/Hero";
-import Rules from "@/components/Rules";
-import SignupForm from "@/components/SignupForm";
-import Footer from "@/components/Footer";
+
+const Rules = dynamic(() => import("@/components/Rules"));
+const SignupForm = dynamic(() => import("@/components/SignupForm"));
+const Footer = dynamic(() => import("@/components/Footer"));
 
 export default function Home() {
   return (

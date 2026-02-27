@@ -45,6 +45,7 @@ export default function Hero() {
           height={210}
           className="-ml-4 -mr-2 lg:-mr-4 mt-2 object-contain scale-[1.1] lg:scale-[1.2] origin-bottom drop-shadow-2xl"
           priority
+          fetchPriority="high"
         />
         <div className="flex flex-col gap-1 py-6 z-10">
           <p className="text-[14px] lg:text-base text-text-muted font-space leading-[140%]">

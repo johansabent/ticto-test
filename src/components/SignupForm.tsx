@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import { supabase } from '@/lib/supabase';
-import confetti from 'canvas-confetti';
+
 
 export default function SignupForm() {
   const [formData, setFormData] = useState({
@@ -41,6 +41,7 @@ export default function SignupForm() {
       if (error) throw error;
 
       setIsSuccess(true);
+      const confetti = (await import('canvas-confetti')).default;
       confetti({
         particleCount: 150,
         spread: 70,
