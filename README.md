@@ -5,7 +5,7 @@ Permite cadastro de participantes para concorrer a um iPhone 16 Pro.
 
 ## 🚀 Deploy
 
-**Produção:** [https://ticto-test.vercel.app](https://ticto-test.vercel.app) *(Em andamento)*
+**Produção:** [https://ticto-test.vercel.app](https://ticto-test-indol.vercel.app?_vercel_share=HTqm34ADXjzJm0DTdinQfdS4MPp5TK47) *(Em andamento)*
 
 ## 🛠️ Tech Stack
 
