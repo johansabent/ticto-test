@@ -22,13 +22,20 @@
     margin: 0;
     padding: 0;
   }
-  
+
   html, body {
-    min-height: 100svh;
+    min-height: 100vh;       /* Fallback for Safari < 15.4 */
+    min-height: 100svh;      /* Modern browsers */
     background-color: var(--color-bg-dark);
     color: var(--color-bg-white);
     font-family: var(--font-space);
     -webkit-font-smoothing: antialiased;
+  }
+
+  /* Fix border-radius on inputs/selects in Safari */
+  input, select, textarea {
+    -webkit-appearance: none;
+    appearance: none;
   }
 }
 
