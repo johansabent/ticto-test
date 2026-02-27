@@ -28,6 +28,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"),
   title: "Ticto × Ebulição — Transforme seu negócio numa máquina de vendas",
   description: "Crie sua conta na Ticto, participe do evento Ebulição por Rafa Prado e concorra a um iPhone 16 Pro. A maior plataforma de vendas do Brasil.",
   openGraph: {
