@@ -28,6 +28,10 @@ export default function SignupForm() {
     setErrorMsg('');
 
     try {
+      if (!process.env.NEXT_PUBLIC_SUPABASE_URL) {
+        throw new Error('Serviço indisponível no momento. A API não foi configurada no ambiente.');
+      }
+
       const { error } = await supabase.from('leads').insert([
         {
           name: formData.name,
@@ -101,14 +105,25 @@ export default function SignupForm() {
           className="pill-input"
         />
 
-        <input
-          type="text"
-          name="ddd"
-          placeholder="DDD"
-          value={formData.ddd}
-          onChange={handleChange}
-          className="pill-input"
-        />
+        <div className="flex gap-[14px]">
+          <input
+            type="text"
+            name="ddd"
+            placeholder="DDD"
+            value={formData.ddd}
+            onChange={handleChange}
+            maxLength={2}
+            className="pill-input ddd-input !w-[30%]"
+          />
+          <input
+            type="tel"
+            name="celular"
+            placeholder="Celular"
+            value={formData.celular}
+            onChange={handleChange}
+            className="pill-input flex-1"
+          />
+        </div>
 
         <input
           type="email"
@@ -117,15 +132,6 @@ export default function SignupForm() {
           value={formData.email}
           onChange={handleChange}
           required
-          className="pill-input"
-        />
-
-        <input
-          type="tel"
-          name="celular"
-          placeholder="Celular"
-          value={formData.celular}
-          onChange={handleChange}
           className="pill-input"
         />
 
@@ -169,22 +175,20 @@ export default function SignupForm() {
         </button>
 
         {/* Disclaimer */}
-        <p className="text-[11px] text-placeholder font-space leading-relaxed text-center mt-1">
+        <p className="text-[14px] text-[#6e6e6e] font-space leading-[1.4] mt-2 w-full text-left">
           Ao enviar seus dados, você autoriza que a Ticto entre em contato e declara estar ciente das{' '}
-          <a href="#" className="underline hover:text-dark-700 transition-colors">Políticas e Termos</a>.
+          <a href="#" className="underline decoration-solid hover:text-dark-700 transition-colors">Políticas e Termos</a>.
         </p>
       </form>
 
       {/* Trust badge */}
-      <div className="flex justify-center items-center gap-2 mt-6">
-        <Image src="/images/icon-shield.svg" alt="Shield" width={18} height={18} />
-        <p className="text-[12px] font-medium text-placeholder font-space">Seus dados estão seguros</p>
-      </div>
-
-      {/* Trust badges */}
-      <div className="flex justify-center items-center gap-6 mt-6">
-        <Image src="/images/badge-r2024.png" alt="Reclame Aqui 2024" width={38} height={46} className="opacity-80 hover:opacity-100 transition-opacity" />
-        <Image src="/images/badge-pci.png" alt="PCI DSS Compliant" width={82} height={25} className="opacity-80 hover:opacity-100 transition-opacity" />
+      <div className="flex items-center gap-[14px] mt-8">
+        <div className="w-[21.6px] h-[24px] relative flex-shrink-0">
+          <Image src="/images/icon-shield.svg" alt="Shield" fill />
+        </div>
+        <p className="text-[14px] text-[#1e1c2d] font-space leading-[18px]">
+          Seus dados estão seguros
+        </p>
       </div>
     </div>
   );
