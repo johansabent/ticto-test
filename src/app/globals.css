@@ -31,6 +31,14 @@
         color: var(--color-bg-white);
         font-family: var(--font-space);
         -webkit-font-smoothing: antialiased;
+        /* Safari: prevent tap highlight flash on interactive elements */
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    /* Safari < 15.4: backdrop-filter prefix */
+    .backdrop-blur-sm {
+        -webkit-backdrop-filter: blur(4px);
+        backdrop-filter: blur(4px);
     }
 
     /* Fix border-radius on inputs/selects in Safari */
