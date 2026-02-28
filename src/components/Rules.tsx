@@ -33,17 +33,20 @@ export default function Rules() {
 
   return (
     <div className="flex flex-col gap-6 lg:gap-8 mb-16 relative z-10 scrollbar-hide">
-      <h3 className="text-[13px] lg:text-sm font-normal text-text-muted font-space opacity-60 tracking-wide">
+      <h2 className="text-[14px] font-normal text-white opacity-50 font-space leading-[1.6]">
         Confira as regras para participar
-      </h3>
+      </h2>
 
-      <div className="flex flex-col gap-6">
+      <div className="flex flex-col gap-3.5">
         {steps.map((step, i) => (
-          <div key={i} className="flex items-start gap-4 animate-fade-in" style={{ animationDelay: `${i * 150}ms` }}>
-            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-brand-cyan/10 border border-brand-cyan/30 flex items-center justify-center text-brand-cyan font-tomato font-bold text-sm shadow-[0_0_15px_rgba(91,190,217,0.15)]">
+          <div key={i} className="flex items-center gap-[14px] animate-fade-in w-full text-[16px]" style={{ animationDelay: `${i * 150}ms` }}>
+            <div className="text-brand-cyan font-bold font-space leading-[1.6] flex-shrink-0">
               {step.num}
             </div>
-            <p className="text-[15px] lg:text-base text-[#BFBFBF] font-space leading-relaxed mt-1 opacity-90">
+            
+            <div className="w-[4px] h-[4px] bg-[#5bbed9] flex-shrink-0"></div>
+            
+            <p className="flex-1 text-white/80 font-space font-normal leading-[1.3] whitespace-pre-wrap">
               <span className="lg:hidden">{step.text}</span>
               <span className="hidden lg:inline">{step.textDesktop || step.text}</span>
             </p>

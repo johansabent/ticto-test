@@ -29,15 +29,15 @@ export default function Home() {
         />
       </div>
 
-      <main className="flex-1 w-full max-w-[1440px] mx-auto px-6 lg:px-[120px] pt-10 lg:pt-16 pb-20 relative z-10 flex flex-col lg:flex-row gap-12 lg:gap-24">
+      <main className="flex-1 w-full max-w-[1440px] mx-auto px-[24px] lg:px-[112px] pt-[40px] lg:pt-[55px] pb-[80px] lg:pb-[140px] relative z-10 flex flex-col lg:flex-row lg:justify-between items-start">
         {/* Left Column (Hero & Rules) */}
-        <div className="w-full lg:w-[45%] flex flex-col order-1">
+        <div className="w-full lg:w-[540px] xl:w-[600px] flex flex-col order-1">
           <Hero />
           <Rules />
         </div>
 
         {/* Right Column (Sticky Form) */}
-        <div className="w-full lg:w-[50%] flex flex-col order-2 lg:sticky lg:top-16 lg:h-fit relative z-20">
+        <div className="w-full lg:w-[488px] flex flex-col order-2 lg:sticky lg:top-24 lg:h-fit relative z-20 mt-12 lg:mt-0">
           <SignupForm />
         </div>
       </main>

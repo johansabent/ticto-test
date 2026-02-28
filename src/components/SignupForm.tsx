@@ -79,12 +79,12 @@ export default function SignupForm() {
   }
 
   return (
-    <div className="w-full bg-white rounded-[24px] p-6 lg:p-10 shadow-2xl relative z-20">
+    <div className="w-full bg-white rounded-[6px] px-[24px] py-[32px] lg:px-[43px] lg:py-[40px] shadow-2xl relative z-20">
       {/* Form header */}
-      <p className="text-[11px] font-bold text-brand-cyan uppercase tracking-widest font-tomato mb-2">
+      <p className="text-[14px] font-bold text-brand-cyan uppercase tracking-[0.7px] font-tomato mb-[8px]">
         CADASTRO 100% GRATUITO
       </p>
-      <h2 className="text-[24px] lg:text-[28px] font-normal text-dark-700 font-tomato leading-[125%] mb-6">
+      <h2 className="text-[24px] lg:text-[32px] font-normal text-dark-700 font-tomato leading-[1.25] mb-[36px] tracking-normal">
         Crie sua conta e comece a vender hoje mesmo
       </h2>
 
@@ -94,7 +94,7 @@ export default function SignupForm() {
         </div>
       )}
 
-      <form onSubmit={handleSubmit} className="flex flex-col gap-[14px]">
+      <form onSubmit={handleSubmit} className="flex flex-col gap-[16px]">
         <input
           type="text"
           name="name"
@@ -159,7 +159,7 @@ export default function SignupForm() {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="btn-primary mt-[10px]"
+          className="btn-primary mt-[10px] w-full max-w-[400px] !bg-[#1d63ff] !rounded-[6px]"
         >
           {isSubmitting ? (
             <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">

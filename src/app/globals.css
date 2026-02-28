@@ -1,84 +1,102 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-cyan: #5BBED9;
-  --color-bg-dark: #030712;
-  --color-bg-black: #000000;
-  --color-bg-white: #FFFFFF;
-  --color-input-bg: #F2F2F2;
-  --color-placeholder: #6D6D6D;
-  --color-dark-700: #0D0B1A;
-  --color-accent-orange: #FF9C2B;
-  --color-text-muted: #D9D9D9;
+    --color-brand-cyan: #5bbed9;
+    --color-bg-dark: #030712;
+    --color-bg-black: #000000;
+    --color-bg-white: #ffffff;
+    --color-input-bg: #f2f2f2;
+    --color-placeholder: #6d6d6d;
+    --color-dark-700: #0d0b1a;
+    --color-accent-orange: #ff9c2b;
+    --color-text-muted: #d9d9d9;
 
-  --font-tomato: var(--font-tomato), "Inter", sans-serif;
-  --font-inter: var(--font-inter), sans-serif;
-  --font-space: var(--font-space), "sans-serif";
+    --font-tomato: var(--font-tomato), "Inter", sans-serif;
+    --font-inter: var(--font-inter), sans-serif;
+    --font-space: var(--font-space), "sans-serif";
 }
 
 @layer base {
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
 
-  html, body {
-    min-height: 100vh;       /* Fallback for Safari < 15.4 */
-    min-height: 100svh;      /* Modern browsers */
-    background-color: var(--color-bg-dark);
-    color: var(--color-bg-white);
-    font-family: var(--font-space);
-    -webkit-font-smoothing: antialiased;
-  }
+    html,
+    body {
+        min-height: 100vh; /* Fallback for Safari < 15.4 */
+        min-height: 100svh; /* Modern browsers */
+        background-color: var(--color-bg-dark);
+        color: var(--color-bg-white);
+        font-family: var(--font-space);
+        -webkit-font-smoothing: antialiased;
+    }
 
-  /* Fix border-radius on inputs/selects in Safari */
-  input, select, textarea {
-    -webkit-appearance: none;
-    appearance: none;
-  }
+    /* Fix border-radius on inputs/selects in Safari */
+    input,
+    select,
+    textarea {
+        -webkit-appearance: none;
+        appearance: none;
+    }
 }
 
 @layer utilities {
-  @keyframes fade-in {
-    from { opacity: 0; transform: translateY(8px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-  .animate-fade-in {
-    animation: fade-in 0.4s ease-out both;
-  }
+    @keyframes fade-in {
+        from {
+            opacity: 0;
+            transform: translateY(8px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    .animate-fade-in {
+        animation: fade-in 0.4s ease-out both;
+    }
 
-  .pill-input {
-    @apply w-full px-6 py-4 rounded-full bg-input-bg border border-transparent text-bg-black font-tomato text-sm transition-all duration-300;
-  }
-  .pill-input::placeholder {
-    @apply text-placeholder;
-  }
-  .pill-input:focus {
-    @apply outline-none border-brand-cyan bg-bg-white shadow-[0_0_0_2px_rgba(91,190,217,0.2)];
-  }
+    .pill-input {
+        @apply w-full px-[25px] py-[16px] rounded-[66px] bg-[var(--color-input-bg)] border border-transparent text-bg-black font-space text-[14px] transition-all duration-300;
+    }
+    .pill-input::placeholder {
+        @apply text-placeholder;
+    }
+    .pill-input:focus {
+        @apply outline-none border-brand-cyan bg-bg-white shadow-[0_0_0_2px_rgba(91,190,217,0.2)];
+    }
 
-  .ddd-input:focus {
-    @apply border-accent-orange shadow-[0_0_0_2px_rgba(255,156,43,0.2)];
-  }
+    .ddd-input:focus {
+        @apply border-accent-orange shadow-[0_0_0_2px_rgba(255,156,43,0.2)];
+    }
 
-  @keyframes shimmer {
-    0%   { transform: translateX(-150%) skewX(-20deg); }
-    100% { transform: translateX(250%) skewX(-20deg); }
-  }
+    @keyframes shimmer {
+        0% {
+            transform: translateX(-150%) skewX(-20deg);
+        }
+        100% {
+            transform: translateX(250%) skewX(-20deg);
+        }
+    }
 
-  .btn-primary {
-    @apply flex w-full justify-center items-center gap-2.5 px-[76px] py-4 rounded-full bg-brand-cyan text-[#F6F6F6] font-tomato font-bold text-sm border-none cursor-pointer transition-transform duration-200 active:scale-95 hover:opacity-90 relative overflow-hidden;
-  }
+    .btn-primary {
+        @apply flex w-full justify-center items-center gap-2.5 px-[76px] py-4 rounded-full bg-brand-cyan text-[#F6F6F6] font-tomato font-bold text-sm border-none cursor-pointer transition-transform duration-200 active:scale-95 hover:opacity-90 relative overflow-hidden;
+    }
 
-  .btn-primary::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 45%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
-    animation: shimmer 2.5s ease-in-out infinite 0.8s;
-  }
+    .btn-primary::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 45%;
+        background: linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.25),
+            transparent
+        );
+        animation: shimmer 2.5s ease-in-out infinite 0.8s;
+    }
 }
