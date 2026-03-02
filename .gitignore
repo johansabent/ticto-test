@@ -55,3 +55,8 @@ correction_plan.md
 lighthouse.json
 docs/
 scripts/
+
+# Local/editor and audit artifacts (not deliverable)
+.vscode/
+mobile-lighthouse*.json
+.github/copilot-instructions.md
