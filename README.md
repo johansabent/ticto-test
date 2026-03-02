@@ -67,3 +67,9 @@ create table leads (
 ## 🎨 Design
 
 Layout focado no Pixel-Perfect a partir do modelo base.
+
+## 📚 Documentação Interna
+
+- [Toolsets operacionais](docs/toolsets.md)
+- [Regras globais do agente](.agent/rules/GEMINI.md)
+- [Arquitetura do Antigravity Kit](.agent/ARCHITECTURE.md)

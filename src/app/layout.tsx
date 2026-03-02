@@ -1,4 +1,5 @@
-import { Inter, Space_Grotesk, Plus_Jakarta_Sans } from "next/font/google";
+import localFont from "next/font/local";
+import { Inter } from "next/font/google";
 import type { Metadata, Viewport } from "next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
@@ -6,26 +7,32 @@ import "./globals.css";
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
-  display: 'swap',
+  display: "swap",
 });
 
-const spaceGrotesk = Space_Grotesk({
+const spaceGrotesk = localFont({
   variable: "--font-space",
-  subsets: ["latin"],
-  display: 'swap',
+  display: "swap",
+  src: [
+    { path: "./fonts/SpaceGrotesk-Regular.ttf", weight: "400", style: "normal" },
+    { path: "./fonts/SpaceGrotesk-Bold.ttf", weight: "700", style: "normal" },
+  ],
 });
 
-const plusJakarta = Plus_Jakarta_Sans({
+const tomatoGrotesk = localFont({
   variable: "--font-tomato",
-  subsets: ["latin"],
-  weight: ["400", "700"],
-  display: 'swap',
+  display: "swap",
+  src: [
+    { path: "./fonts/TomatoGrotesk-Regular.otf", weight: "400", style: "normal" },
+    { path: "./fonts/TomatoGrotesk-Bold.otf", weight: "700", style: "normal" },
+  ],
 });
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
+  themeColor: "#030712",
 };
 
 export const metadata: Metadata = {
@@ -56,8 +63,14 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body
-        className={`${inter.variable} ${spaceGrotesk.variable} ${plusJakarta.variable} antialiased`}
+        className={`${inter.variable} ${spaceGrotesk.variable} ${tomatoGrotesk.variable} antialiased`}
       >
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-white focus:text-black focus:px-4 focus:py-2 focus:rounded-md"
+        >
+          Pular para o conteúdo principal
+        </a>
         {children}
         <SpeedInsights />
       </body>

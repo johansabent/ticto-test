@@ -1,0 +1,51 @@
+# Git
+.git
+.gitignore
+.github
+
+# Node
+node_modules
+.npm
+package-lock.json
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Next.js
+.next
+.vercel
+out
+build
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+*.code-workspace
+.cursor
+.claude
+
+# OS
+.DS_Store
+Thumbs.db
+*.log
+
+# Environment (local only, use .env.local.example instead)
+.env.local
+.env.*.local
+
+# Testing
+.playwright-mcp
+*.png
+*.jpg
+
+# Build artifacts
+dist
+coverage
+.tsbuildinfo
+
+# Docker artifacts (don't copy to image)
+docker-compose.yml
+Dockerfile
+.dockerignore

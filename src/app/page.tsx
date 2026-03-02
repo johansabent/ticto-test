@@ -11,6 +11,14 @@ export default function Home() {
     <div className="min-h-screen flex flex-col relative">
       {/* Background glow effects — overflow-hidden here only, not on sticky ancestor */}
       <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+        <Image
+          src="/images/bg.png"
+          alt=""
+          fill
+          sizes="100vw"
+          className="object-cover"
+          priority
+        />
         <Image 
           src="/images/bg-blur-right.svg" 
           alt="" 
@@ -29,15 +37,15 @@ export default function Home() {
         />
       </div>
 
-      <main className="flex-1 w-full max-w-[1440px] mx-auto px-[24px] lg:px-[112px] pt-[40px] lg:pt-[55px] pb-[80px] lg:pb-[140px] relative z-10 flex flex-col lg:flex-row lg:justify-between items-start">
+      <main id="main-content" className="flex-1 w-full max-w-[1440px] mx-auto px-[24px] lg:px-[112px] pt-[40px] lg:pt-[55px] pb-[44px] lg:pb-[140px] relative z-10 flex flex-col lg:flex-row lg:gap-[103px] items-start">
         {/* Left Column (Hero & Rules) */}
-        <div className="w-full lg:w-[540px] xl:w-[600px] flex flex-col order-1">
+        <div className="w-full lg:w-[624px] flex flex-col order-1">
           <Hero />
           <Rules />
         </div>
 
         {/* Right Column (Sticky Form) */}
-        <div className="w-full lg:w-[488px] flex flex-col order-2 lg:sticky lg:top-24 lg:h-fit relative z-20 mt-12 lg:mt-0">
+        <div className="w-full lg:w-[488px] flex flex-col order-2 lg:sticky lg:top-24 lg:h-fit relative z-20 mt-[51px] lg:mt-0">
           <SignupForm />
         </div>
       </main>
