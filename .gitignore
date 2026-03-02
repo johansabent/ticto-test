@@ -49,7 +49,8 @@ CLAUDE.md
 .editorconfig
 .windsurfrules
 .playwright-mcp/
-*.png
+debug-*.png
+Screenshot*.png
 build_output.txt
 correction_plan.md
 lighthouse.json
