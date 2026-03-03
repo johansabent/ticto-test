@@ -28,8 +28,7 @@ export default function Hero() {
       </div>
 
       <div
-        className="w-[624px] max-w-full bg-transparent border border-[#5bbed9] rounded-[8px] h-[117px] lg:h-[193px] mt-[32px] mb-[32px] overflow-hidden relative"
-        style={{ backgroundImage: "linear-gradient(244.131deg, rgba(255, 255, 255, 0.1) 16.297%, rgba(255, 255, 255, 0) 113.33%)" }}
+        className="promo-frame-gradient w-[624px] max-w-full bg-transparent rounded-[8px] h-[117px] lg:h-[193px] mt-[32px] mb-[32px] overflow-hidden relative"
       >
         <div className="absolute left-[22px] top-[21px] lg:left-[53px] lg:top-[39px]">
           <p className="text-[16px] lg:text-[24px] text-white font-tomato font-normal leading-[1.2] w-[193px] lg:w-[350px]">

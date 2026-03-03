@@ -62,6 +62,13 @@ export default function SignupForm() {
 
       if (error) throw error;
 
+      // Fire-and-forget: email failure never blocks the success UX
+      fetch('/api/send-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name: formData.name, email: formData.email }),
+      }).catch(() => {});
+
       setIsSuccess(true);
       const confetti = (await import('canvas-confetti')).default;
       confetti({
@@ -85,7 +92,10 @@ export default function SignupForm() {
           <svg className="w-10 h-10 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"></path></svg>
         </div>
         <h2 className="text-2xl font-bold font-tomato text-dark-700 mb-2">Sucesso absoluto!</h2>
-        <p className="text-placeholder font-space mb-6 max-w-[300px]">Seus dados foram enviados e você já está participando do sorteio de um iPhone 16 Pro.</p>
+        <p className="text-placeholder font-space mb-3 max-w-[300px]">Você já está participando do sorteio de um iPhone 16 Pro.</p>
+        <p className="text-sm font-space text-brand-cyan mb-6 max-w-[300px]">
+          📬 Verifique seu e-mail — enviamos uma confirmação de inscrição para você!
+        </p>
         <button
           onClick={() => { setIsSuccess(false); setFormData({ name: '', cpf: '', email: '', celular: '', sellsOnline: '' }); }}
           className="btn-primary w-fit px-8"

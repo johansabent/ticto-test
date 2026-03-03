@@ -109,6 +109,36 @@
         animation: shimmer 2.5s ease-in-out infinite 0.8s;
     }
 
+    .promo-frame-gradient {
+        --border-width: 1px;
+        position: relative;
+        border-radius: 8px;
+        background: linear-gradient(
+            261deg,
+            rgba(255, 255, 255, 0.10) -16.3%,
+            rgba(255, 255, 255, 0.00) 113.33%
+        );
+    }
+
+    .promo-frame-gradient::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        padding: var(--border-width, 1px);
+        border-radius: inherit;
+        background: linear-gradient(
+            225deg,
+            rgba(91, 190, 217, 1) 0%,
+            rgba(91, 190, 217, 0) 65%
+        );
+        mask:
+            linear-gradient(#000 0 0) content-box,
+            linear-gradient(#000 0 0);
+        mask-composite: exclude;
+        -webkit-mask-composite: xor;
+        pointer-events: none;
+    }
+
     @media (prefers-reduced-motion: reduce) {
         .animate-fade-in,
         .btn-primary::after {
