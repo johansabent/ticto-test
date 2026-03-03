@@ -61,3 +61,10 @@ scripts/
 .vscode/
 mobile-lighthouse*.json
 .github/copilot-instructions.md
+
+# Playwright and local QA artifacts
+artifacts/
+playwright-report/
+test-results/
+firebase-debug.log
+footer-*.png

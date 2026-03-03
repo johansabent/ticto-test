@@ -6,7 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "test:safari": "playwright test --project=webkit",
+    "test:safari:ios": "playwright test --project=webkit-ios",
+    "test:safari:all": "playwright test --project=webkit --project=webkit-ios",
+    "test:safari:headed": "playwright test --project=webkit --headed"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.98.0",
@@ -14,10 +18,12 @@
     "canvas-confetti": "^1.9.4",
     "next": "16.1.6",
     "react": "19.2.3",
-    "react-dom": "19.2.3"
+    "react-dom": "19.2.3",
+    "resend": "^6.9.3"
   },
   "devDependencies": {
     "@figma/code-connect": "^1.4.1",
+    "@playwright/test": "^1.58.2",
     "@tailwindcss/postcss": "^4",
     "@types/canvas-confetti": "^1.9.0",
     "@types/node": "^20",
